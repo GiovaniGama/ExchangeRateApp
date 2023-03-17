@@ -4,9 +4,12 @@
   display: flex;
   justify-content: center;
   width: 100%;
-  border-bottom: solid 2px $color-grey-2;
 
   &__logo{
+    display: flex;
+    justify-content: center;
+    border-bottom: 2px solid $color-grey-2;
+    width: 98%;
     padding: 10px 0;
   }
 }
