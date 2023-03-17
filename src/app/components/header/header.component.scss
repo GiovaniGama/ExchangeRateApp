@@ -1,0 +1,12 @@
+@import "../../../styles/variables.scss";
+
+.header{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  border-bottom: solid 2px $color-grey-2;
+
+  &__logo{
+    padding: 10px 0;
+  }
+}
