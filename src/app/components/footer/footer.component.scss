@@ -1,0 +1,20 @@
+@import "../../../styles/variables.scss";
+
+.footer{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: $color-blue;
+  padding: 7px 0;
+
+  position: fixed;
+  bottom:0;
+  left:0;
+
+  &__container{
+    &--text{
+      color: $color-white;
+      font-size: 12px;
+    }
+  }
+}
