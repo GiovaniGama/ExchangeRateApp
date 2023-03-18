@@ -5,11 +5,19 @@
   <form class="exchange-rate__form">
     <mat-form-field class="example-full-width" appearance="fill">
       <mat-label>Enter the currency code</mat-label>
-      <input matInput placeholder="Enter the currency code">
+      <input
+        [(ngModel)]="exchangeRate"
+        name="exchangeRates"
+        type="text"
+        matInput
+        placeholder="Enter the currency code"
+        >
     </mat-form-field>
   </form>
   <div class="exchange-rate__actions">
-    <button class="exchange-rate__actions--button">
+    <button class="exchange-rate__actions--button"
+      [disabled]="!exchangeRate"
+      (click)="returnValueExchangeRates(exchangeRate)">
       Exchange result
     </button>
   </div>
