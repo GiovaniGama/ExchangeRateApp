@@ -21,4 +21,7 @@
       Exchange result
     </button>
   </div>
+  <div class="exchange-rate__result" *ngIf="returnIsTrue">
+    <app-exchange-rate-result [resultExchageRate]="exchangeRates"></app-exchange-rate-result>
+  </div>
 </section>
