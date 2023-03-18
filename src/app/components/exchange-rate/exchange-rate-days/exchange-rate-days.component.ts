@@ -23,6 +23,8 @@ export class ExchangeRateDaysComponent implements OnInit, OnChanges {
 
   resultExchangeRateDays: IExchangeRateDays | undefined
 
+  finalValueDiff: number = 0
+
   constructor(
     private _service: ExchangeRateService
   ) { }
@@ -75,6 +77,12 @@ export class ExchangeRateDaysComponent implements OnInit, OnChanges {
       })
   }
 
+  calculateDiff(valueOpen: number, valueClose: number){
+    const valueSubtracted = valueOpen - valueClose
+    const valueDiff = (valueSubtracted / valueOpen)
+
+    return this.finalValueDiff = valueDiff
+  }
 
 }
 
