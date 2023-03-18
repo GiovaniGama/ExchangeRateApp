@@ -31,8 +31,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles/reset.scss",
-              "src/styles/styles.scss"
+              "src/assets/styles/reset.scss",
+              "src/assets/styles/styles.scss"
             ],
             "scripts": []
           },
@@ -100,8 +100,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles/reset.scss",
-              "src/styles/styles.scss"
+              "src/assets/styles/reset.scss",
+              "src/assets/styles/styles.scss"
             ],
             "scripts": []
           }
