@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IExchangeRate } from 'src/app/interfaces/exchange-rate.interface';
-import { ExchangeRateService } from '../../services/exchange-rate.service';
+import { ExchangeRateService } from '../../../services/exchange-rate.service';
 
 @Component({
   selector: 'app-exchange-rate-search',
