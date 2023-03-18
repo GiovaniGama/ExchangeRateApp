@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { IExchangeRate } from 'src/app/interfaces/exchange-rate.interface';
 import { ExchangeRateService } from '../../services/exchange-rate.service';
 
@@ -10,8 +10,10 @@ import { ExchangeRateService } from '../../services/exchange-rate.service';
 export class ExchangeRateSearchComponent implements OnInit {
 
   exchangeRate: string = ''
-  @Input() exchangeRates: IExchangeRate[] = []
 
+  exchangeRates: IExchangeRate | undefined
+
+  returnIsTrue: boolean = false
 
   constructor(
     private _service: ExchangeRateService
@@ -22,9 +24,9 @@ export class ExchangeRateSearchComponent implements OnInit {
 
   returnValueExchangeRates(value: string): any {
     this._service.getExchangeRates(value)
-      .subscribe((dataValue) => {
+      .subscribe((dataValue: IExchangeRate) => {
         this.exchangeRates = dataValue
-        console.log(this.exchangeRates)
+        this.returnIsTrue = true
       })
   }
 
