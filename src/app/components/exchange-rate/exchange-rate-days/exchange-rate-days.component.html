@@ -1,5 +1,5 @@
 <section class="accordion">
-  <div class="accordion__item" >
+  <div class="accordion__item">
     <div class="accordion__header">
       <span class="accordion__header--title">LAST 30 DAYS</span>
       <div class="accordion__icon">
@@ -14,14 +14,43 @@
         </div>
         <div class="accordion__card--values">
           <div class="accordion__card--values-span">
-            <span>OPEN: {{(valuesExchangeRate.open).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}}</span>
-            <span>HIGHT: {{(valuesExchangeRate.high).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}}</span>
-            <span>CLOSE: {{(valuesExchangeRate.close).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}}</span>
-            <span>LOW: {{(valuesExchangeRate.low).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}}</span>
+            <span class="accordion__card--values-span--left">
+              OPEN:
+              <p>{{(valuesExchangeRate.open).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}}</p>
+            </span>
+            <span class="accordion__card--values-span--right">
+              HIGHT:
+              <p>
+                {{(valuesExchangeRate.high).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}}
+              </p>
+            </span>
+            <span class="accordion__card--values-span--left">
+              CLOSE:
+              <p>
+                {{(valuesExchangeRate.close).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}}
+              </p>
+            </span>
+            <span class="accordion__card--values-span--right">
+              LOW:
+              <p>
+                {{(valuesExchangeRate.low).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}}
+              </p>
+            </span>
           </div>
         </div>
         <div class="accordion__card--close-diff">
-          <span>CLOSE DIFF(%):</span>
+          <span class="accordion__card--close-diff-span">
+            CLOSE DIFF(%):
+            <p class="accordion__card--close-diff-p"
+              [ngStyle]="{
+                'color': (finalValueDiff > 0 ? '#69C669' : '#E54E4E')
+              }"
+              >
+              {{calculateDiff(valuesExchangeRate.open, valuesExchangeRate.close)}}
+              <mat-icon *ngIf="finalValueDiff > 0">expand_less</mat-icon>
+              <mat-icon *ngIf="finalValueDiff < 0">expand_more</mat-icon>
+            </p>
+          </span>
         </div>
       </div>
     </div>
