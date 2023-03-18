@@ -2,16 +2,19 @@
   <div class="exchange-rate-result__line" *ngIf="finalResultExchageRate"></div>
   <div class="exchange-rate-result__values">
     <div class="exchange-rate-result__values--title">
-      <h2>Exchange rate now</h2>
+      <span>Exchange rate now</span>
       <p>{{finalResultExchageRate?.lastUpdatedAt | date: 'dd/MM/yyyy HH:mm'}}</p>
     </div>
     <div class="exchange-rate-result__values--types">
-      <h2>
+      <span>
         {{finalResultExchageRate?.fromSymbol}}/{{finalResultExchageRate?.toSymbol}}
-      </h2>
+      </span>
     </div>
   </div>
   <div class="exchange-rate-result__final-value">
     <p>{{(finalResultExchageRate?.exchangeRate)?.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}}</p>
+  </div>
+  <div class="exchange-rate-result__days">
+    <app-exchange-rate-days *ngIf="finalResultExchageRate?.fromSymbol" [resultFromSymbol]="finalResultExchageRate?.fromSymbol"></app-exchange-rate-days>
   </div>
 </section>

@@ -11,13 +11,17 @@ import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ExchangeRateResultComponent } from './components/exchange-rate/exchange-rate-result/exchange-rate-result.component';
+import { ExchangeRateDaysComponent } from './components/exchange-rate/exchange-rate-days/exchange-rate-days.component';
+import { MatIconModule } from '@angular/material/icon';
+
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
     ExchangeRateSearchComponent,
-    ExchangeRateResultComponent
+    ExchangeRateResultComponent,
+    ExchangeRateDaysComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +29,8 @@ import { ExchangeRateResultComponent } from './components/exchange-rate/exchange
     BrowserAnimationsModule,
     MatInputModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
