@@ -15,6 +15,8 @@
     <p>{{(finalResultExchageRate?.exchangeRate)?.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}}</p>
   </div>
   <div class="exchange-rate-result__days">
-    <app-exchange-rate-days *ngIf="finalResultExchageRate?.fromSymbol" [resultFromSymbol]="finalResultExchageRate?.fromSymbol"></app-exchange-rate-days>
+    <app-exchange-rate-days
+      [resultFromSymbol]="finalResultExchageRate?.fromSymbol"
+    ></app-exchange-rate-days>
   </div>
 </section>
