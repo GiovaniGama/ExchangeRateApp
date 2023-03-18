@@ -16,9 +16,9 @@ export class ExchangeRateService {
     private _http: HttpClient
   ) { }
 
-  getExchangeRates(from_symbol: string): Observable<IExchangeRate[]>{
+  getExchangeRates(from_symbol: string): Observable<IExchangeRate>{
     const url = `${this.URL}?apiKey=${this.API_KEY}/&from_symbol=${from_symbol}&to_symbol=BRL`
-    return this._http.get<IExchangeRate[]>(url)
+    return this._http.get<IExchangeRate>(url)
   }
 
 }
